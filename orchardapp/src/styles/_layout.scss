@@ -1,0 +1,35 @@
+body {
+    background-color: $primary-bg-color;
+    color: $text-color;
+     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    margin: 0;
+    
+  }
+
+.cooking {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .cooking h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .cooking p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .cooking img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+}
