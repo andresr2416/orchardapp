@@ -1,10 +1,19 @@
-import React from 'react';
+import React from "react";
+import { motion } from "framer-motion";
 
 const Cooking = () => {
   return (
     <div className="cooking">
-      <h2>Cooking Component</h2>
-      <p>Este es el componente de Cooking. Aquí puedes agregar contenido relacionado con cocina.</p>
+      <div className="BlockImage-Text">
+      <div class="Images">
+
+        <div className="Left">
+          
+        </div>
+        <div className="Right-Top"></div>
+        <div className="Right-Bottom"></div>
+      </div>
+      </div>
     </div>
   );
 };

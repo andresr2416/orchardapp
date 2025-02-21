@@ -8,28 +8,45 @@ body {
     
   }
 
-.cooking {
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.cooking {    
+  
     height: 100vh;
     width: 100vw;
+
+    
+
+    .BlockImage-Text {
+      height: 840px;
+      align-self: stretch;
+      flex-grow: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 30px;
+      padding: 120px 147px;
+
+      .Images {
+        width: 754px;
+        height: 600px;
+        flex-grow: 0;
+
+        .Left {
+          width: 372px;
+          height: 600px;
+          flex-grow: 0;
+          margin: 0 10px 0 0;
+        }
+      }
+    }
   }
 
-  .cooking h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
 
-  .cooking p {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .cooking img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 1rem;
-}
+  
+ 
+  .taste {
+      
+   
+      height: 100vh;
+      width: 100vw;
+    }
