@@ -1,0 +1,57 @@
+.taste {
+
+    height: 100vh;
+    width: 100vw;
+
+    .Block3-cards {
+        height: 793px;
+        align-self: stretch;
+        flex-grow: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 30px;
+        padding: 120px 147px;
+
+        .Content {
+            height: 553px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 30px;
+            padding: 0;
+
+            .Headline {
+                width: 312px;
+                height: 63px;
+                flex-grow: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                padding: 0 0 30px;
+                border-bottom: solid 1px #fff;
+
+                .Taste-the-Colours {
+                    width: 312px;
+                    height: 33px;
+                    flex-grow: 0;
+                    font-size: 30px;
+                    font-weight: 300;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.1;
+                    letter-spacing: 1.5px;
+                    text-align: left;
+                    color: #fff;
+                }
+            
+            }
+        }
+    }
+
+}
