@@ -1,7 +1,4 @@
-.taste {
-
-    height: 100vh;
-    width: 100vw;
+.taste { 
 
     .Block3-cards {
         height: 793px;
@@ -48,9 +45,85 @@
                     letter-spacing: 1.5px;
                     text-align: left;
                     color: #fff;
+                    text-transform: uppercase;
+                    text-align: center;
                 }
             
             }
+
+            .Card-List {
+                height: 460px;
+                align-self: stretch;
+                flex-grow: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                padding: 0;
+
+                .Card {
+                    width: 375px;
+                    height: 460px;
+                    flex-grow: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 30px;
+                    padding: 0;
+
+                    .Tight-Top {
+                        width: 375px;
+                        height: 300px;
+                        flex-grow: 0;
+                      }
+
+                      .Card-Content {
+                        height: 130px;
+                        align-self: stretch;
+                        flex-grow: 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: stretch;
+                        gap: 10px;
+                        padding: 0 30px;
+
+
+                        .Card-title {
+                            height: 30px;
+                            align-self: stretch;
+                            flex-grow: 0;
+                            font-size: 21px;
+                            font-weight: bold;
+                            font-stretch: normal;
+                            font-style: normal;
+                            line-height: 1.43;
+                            letter-spacing: normal;
+                            text-align: center;
+                            color: #fff;
+                          }
+
+                          .Card-Description {
+                            height: 90px;
+                            align-self: stretch;
+                            flex-grow: 0;
+                            font-size: 21px;
+                            font-weight: 300;
+                            font-stretch: normal;
+                            font-style: normal;
+                            line-height: 1.43;
+                            letter-spacing: normal;
+                            text-align: center;
+                            color: #fff;
+                          }
+                      }
+
+                     
+                  }
+
+              }
         }
     }
 
