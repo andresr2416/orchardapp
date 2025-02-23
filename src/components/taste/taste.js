@@ -2,42 +2,49 @@ import React, { useState } from "react";
 import "./taste.scss";
 import Modal from "react-modal";
 import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const cardData = [
   {
     id: 1,
-    image: require("../../assets/images/red.png"),  
+    image: require("../../assets/images/red.png"),
     title: "Red",
-    description: "Red foods remind us of berries and soft fruits, so we anticipate a sweet taste.",
+    description:
+      "Red foods remind us of berries and soft fruits, so we anticipate a sweet taste.",
   },
   {
     id: 2,
-    image: require("../../assets/images/green.png"),  
+    image: require("../../assets/images/green.png"),
     title: "Green",
-    description: "Fresh, zingy green colours are reminiscent of unripe fruit, promising sour or acid flavours.",
+    description:
+      "Fresh, zingy green colours are reminiscent of unripe fruit, promising sour or acid flavours.",
   },
   {
     id: 3,
-    image: require("../../assets/images/white.png"),  
+    image: require("../../assets/images/white.png"),
     title: "White",
-    description: "White foods evoke memories of salt and salty flavours, driving the expectation of a savoury treat.",
+    description:
+      "White foods evoke memories of salt and salty flavours, driving the expectation of a savoury treat.",
   },
 ];
 
 const Taste = () => {
-
- const [isOpen, setIsOpen] = useState(false); 
-  const [currentImage, setCurrentImage] = useState(null); 
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(null);
 
   const openModal = (src) => {
     setCurrentImage(src);
-    setIsOpen(true); 
+    setIsOpen(true);
   };
 
   const closeModal = () => {
-    setIsOpen(false); 
+    setIsOpen(false);
+  };
+
+  const handleCardClick = (src) => {
+    console.log("Card clicked:", src);
+    openModal(src);
   };
 
   return (
@@ -45,24 +52,56 @@ const Taste = () => {
       <div className="Block3-cards">
         <div className="Content">
           <div className="Headline">
-            <span className="Taste-the-Colours Text-Style">Taste the Colours</span>
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                console.log("'Taste-the-Colours' clicked");
+              }}
+              className="Taste-the-Colours Text-Style"
+            >
+              Taste the Colours
+            </a>
           </div>
           <div className="Card-List">
             {cardData.map((card) => (
               <div key={card.id} className="Card">
-                <img src={card.image} alt={card.title} className="Tight-Top"  onClick={() => openModal(card.image)} />
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="Tight-Top"
+                  onClick={() => handleCardClick(card.image)}
+                />
                 <div className="Card-Content">
-                  <span className="Card-title">{card.title}</span>
-                  <p className="Card-Description">{card.description}</p>
+                  <a
+                    href="/"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      console.log("'Card-title' clicked");
+                    }}
+                    className="Card-title"
+                  >
+                    {card.title}
+                  </a>
+                  <a
+                    href="/"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      console.log("'Card-Description' clicked");
+                    }}
+                    className="Card-Description"
+                  >
+                    {card.description}
+                  </a>
                 </div>
               </div>
             ))}
           </div>
-          </div>
         </div>
-        <Modal
+      </div>
+      <Modal
         isOpen={isOpen}
-        onRequestClose={closeModal} 
+        onRequestClose={closeModal}
         contentLabel="Imagen Ampliada"
       >
         <motion.div
@@ -72,7 +111,6 @@ const Taste = () => {
           transition={{ duration: 0.5 }}
           style={{ position: "relative", maxWidth: "70%", maxHeight: "70%" }}
         >
-        
           <button
             onClick={closeModal}
             style={{
@@ -91,12 +129,11 @@ const Taste = () => {
           <img
             src={currentImage}
             alt="Imagen Ampliada"
-            style={{ width: "100%", height: "100%", objectFit: "contain" }} 
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
           />
         </motion.div>
       </Modal>
-      </div>
-  
+    </div>
   );
 };
 

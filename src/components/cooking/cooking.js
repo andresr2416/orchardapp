@@ -1,89 +1,130 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import './cooking.scss';
+import "./cooking.scss";
 Modal.setAppElement("#root");
 
 const Cooking = () => {
-  const [isOpen, setIsOpen] = useState(false); 
-  const [currentImage, setCurrentImage] = useState(null); 
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(null);
 
   const openModal = (src) => {
     setCurrentImage(src);
-    setIsOpen(true); 
+    setIsOpen(true);
   };
 
   const closeModal = () => {
-    setIsOpen(false); 
+    setIsOpen(false);
+  };
+
+  const handleImageClick = (src) => {
+    console.log("Image clicked:", src);
+    openModal(src);
   };
 
   return (
-      <div className="BlockImage-Text">
-        <div className="Images">
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 100 }}
-            transition={{ duration: 1 }}
+    <div className="BlockImage-Text">
+      <div className="Images">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 100 }}
+          transition={{ duration: 1 }}
+          className="Left"
+        >
+          <img
+            src={require("../../assets/images/cooking.png")}
+            alt="Imagen de Cocina"
             className="Left"
+            onClick={() =>
+              handleImageClick(require("../../assets/images/cooking.png"))
+            }
+          />
+        </motion.div>
+        <div className="order-images">
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 1 }}
+            transition={{ duration: 2 }}
+            src={require("../../assets/images/chef.png")}
+            alt="Imagen de Cocina"
+            className="Right-Top"
+            onClick={() =>
+              handleImageClick(require("../../assets/images/chef.png"))
+            }
+          />
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 1 }}
+            transition={{ duration: 2 }}
+            src={require("../../assets/images/eggs.png")}
+            alt="Imagen de Cocina"
+            className="Right-Bottom"
+            onClick={() =>
+              handleImageClick(require("../../assets/images/eggs.png"))
+            }
+          />
+        </div>
+      </div>
+      <div className="Content">
+        <div className="Headline">
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              console.log("'What does Cooking Mean?' clicked");
+            }}
+            className="WHAT-DOES-COOKING-MEAN"
           >
-            <img
-              src={require("../../assets/images/cooking.png")}
-              alt="Imagen de Cocina"
-              className="Left"
-              onClick={() => openModal(require("../../assets/images/cooking.png"))} 
-            />
-          </motion.div>
-          <div className="order-images">
-            <motion.img
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 1 }}
-              transition={{ duration: 2 }}
-              src={require("../../assets/images/chef.png")}
-              alt="Imagen de Cocina"
-              className="Right-Top"
-              onClick={() => openModal(require("../../assets/images/chef.png"))} 
-            />
-            <motion.img
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 1 }}
-              transition={{ duration: 2 }}
-              src={require("../../assets/images/eggs.png")}
-              alt="Imagen de Cocina"
-              className="Right-Bottom"
-              onClick={() => openModal(require("../../assets/images/eggs.png"))} 
-            />
-          </div>
+            WHAT DOES COOKING MEAN?
+          </a>
         </div>
-        <div className="Content">
-          <div className="Headline">
-            <span className="WHAT-DOES-COOKING-MEAN">
-              WHAT DOES COOKING MEAN?
-            </span>
-          </div>
-          <span className="text-cooking">
-            Is it simply applying heat to a food product? A way of making
-            certain food safe to eat? Or a way to create flavour and make food
-            more appealing? This is just part of what Hervé This, the father of
-            molecular gastronomy, has dedicated his life to finding out. We
-            spoke to him to find out what his experiments have told him. And in
-            the process even discovered the secret to cooking the perfect egg...
-          </span>
-          <div className="Call-out">
-            <span className="THE-PERFECT-EGG">THE PERFECT EGG</span>
-            <span className="WATER">
-              Keep water between 67 and 68°C for a flavourful, tender yolk
-            </span>
-          </div>
+        <a
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            console.log("'Text-Cooking' clicked");
+          }}
+          className="text-cooking"
+        >
+          Is it simply applying heat to a food product? A way of making certain
+          food safe to eat? Or a way to create flavour and make food more
+          appealing? This is just part of what Hervé This, the father of
+          molecular gastronomy, has dedicated his life to finding out. We spoke
+          to him to find out what his experiments have told him. And in the
+          process even discovered the secret to cooking the perfect egg...
+        </a>
+        <div className="Call-out">
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              console.log("'THE PERFECT EGG' clicked");
+            }}
+            className="THE-PERFECT-EGG"
+          >
+            THE PERFECT EGG
+          </a>
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              console.log("'WATER' clicked");
+            }}
+            className="WATER"
+          >
+            Keep water between 67 and 68°C for a flavourful, tender yolk
+          </a>
         </div>
+      </div>
 
       <Modal
         isOpen={isOpen}
-        onRequestClose={closeModal} 
+        onRequestClose={closeModal}
         contentLabel="Imagen Ampliada"
       >
         <motion.div
@@ -93,7 +134,6 @@ const Cooking = () => {
           transition={{ duration: 0.5 }}
           style={{ position: "relative", maxWidth: "70%", maxHeight: "70%" }}
         >
-        
           <button
             onClick={closeModal}
             style={{
@@ -112,12 +152,11 @@ const Cooking = () => {
           <img
             src={currentImage}
             alt="Imagen Ampliada"
-            style={{ width: "100%", height: "100%", objectFit: "contain" }} 
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
           />
         </motion.div>
       </Modal>
-      </div>
-  
+    </div>
   );
 };
 
