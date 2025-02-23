@@ -51,7 +51,12 @@ const Taste = () => {
     <div className="taste">
       <div className="Block3-cards">
         <div className="Content">
-          <div className="Headline">
+          <motion.div
+            className="Headline"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0 }}
+          >
             <a
               href="/"
               onClick={(e) => {
@@ -62,10 +67,25 @@ const Taste = () => {
             >
               Taste the Colours
             </a>
-          </div>
-          <div className="Card-List">
-            {cardData.map((card) => (
-              <div key={card.id} className="Card">
+          </motion.div>
+
+          <motion.div
+            className="Card-List"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
+            {cardData.map((card, index) => (
+              <motion.div
+                key={card.id}
+                className="Card"
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 1,
+                  delay: index * 0.8,
+                }}
+              >
                 <img
                   src={card.image}
                   alt={card.title}
@@ -94,9 +114,9 @@ const Taste = () => {
                     {card.description}
                   </a>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
       <Modal

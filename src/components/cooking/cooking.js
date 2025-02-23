@@ -48,7 +48,7 @@ const Cooking = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 1 }}
-            transition={{ duration: 2 }}
+            transition={{ delay: 1, duration: 2 }}
             src={require("../../assets/images/chef.png")}
             alt="Imagen de Cocina"
             className="Right-Top"
@@ -60,7 +60,7 @@ const Cooking = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 1 }}
-            transition={{ duration: 2 }}
+            transition={{ delay: 2, duration: 2 }}
             src={require("../../assets/images/eggs.png")}
             alt="Imagen de Cocina"
             className="Right-Bottom"
@@ -71,7 +71,12 @@ const Cooking = () => {
         </div>
       </div>
       <div className="Content">
-        <div className="Headline">
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="Headline"
+        >
           <a
             href="/"
             onClick={(e) => {
@@ -82,14 +87,18 @@ const Cooking = () => {
           >
             WHAT DOES COOKING MEAN?
           </a>
-        </div>
-        <a
+        </motion.div>
+
+        <motion.a
           href="/"
           onClick={(e) => {
             e.preventDefault();
             console.log("'Text-Cooking' clicked");
           }}
           className="text-cooking"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
         >
           Is it simply applying heat to a food product? A way of making certain
           food safe to eat? Or a way to create flavour and make food more
@@ -97,8 +106,14 @@ const Cooking = () => {
           molecular gastronomy, has dedicated his life to finding out. We spoke
           to him to find out what his experiments have told him. And in the
           process even discovered the secret to cooking the perfect egg...
-        </a>
-        <div className="Call-out">
+        </motion.a>
+
+        <motion.div
+          className="Call-out"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2, duration: 0.8 }}
+        >
           <a
             href="/"
             onClick={(e) => {
@@ -119,7 +134,7 @@ const Cooking = () => {
           >
             Keep water between 67 and 68°C for a flavourful, tender yolk
           </a>
-        </div>
+        </motion.div>
       </div>
 
       <Modal
