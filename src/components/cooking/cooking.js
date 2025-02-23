@@ -20,7 +20,6 @@ const Cooking = () => {
   };
 
   return (
-    <div className="cooking">
       <div className="BlockImage-Text">
         <div className="Images">
           <motion.div
@@ -37,7 +36,7 @@ const Cooking = () => {
               onClick={() => openModal(require("../../assets/images/cooking.png"))} 
             />
           </motion.div>
-          <div>
+          <div className="order-images">
             <motion.img
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -66,7 +65,7 @@ const Cooking = () => {
               WHAT DOES COOKING MEAN?
             </span>
           </div>
-          <span className="Is-it-simply-applying-heat-to-a-food-product-A-way-of-making-certain-food-safe-to-eat-Or-a-way-to">
+          <span className="text-cooking">
             Is it simply applying heat to a food product? A way of making
             certain food safe to eat? Or a way to create flavour and make food
             more appealing? This is just part of what Hervé This, the father of
@@ -76,12 +75,11 @@ const Cooking = () => {
           </span>
           <div className="Call-out">
             <span className="THE-PERFECT-EGG">THE PERFECT EGG</span>
-            <span className="Keep-water-between-67-and-68C-for-a-flavourful-tender-yolk">
+            <span className="WATER">
               Keep water between 67 and 68°C for a flavourful, tender yolk
             </span>
           </div>
         </div>
-      </div>
 
       <Modal
         isOpen={isOpen}
@@ -118,7 +116,8 @@ const Cooking = () => {
           />
         </motion.div>
       </Modal>
-    </div>
+      </div>
+  
   );
 };
 

@@ -1,130 +1,266 @@
-.taste { 
-
+.taste {
     .Block3-cards {
-        height: 793px;
-        align-self: stretch;
-        flex-grow: 0;
+      height: 793px;
+      align-self: stretch;
+      flex-grow: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 30px;
+      padding: 120px 147px;
+  
+      .Content {
+        height: 553px;
+        flex-grow: 1;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: center;
         gap: 30px;
-        padding: 120px 147px;
-
-        .Content {
-            height: 553px;
-            flex-grow: 1;
+        padding: 0;
+        
+  
+        .Headline {
+          width: 312px;
+          height: 63px;
+          flex-grow: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          padding: 0 0 30px;
+          border-bottom: solid 1px #fff;
+          align-self: center;
+  
+          .Taste-the-Colours {
+            width: 312px;
+            height: 33px;
+            flex-grow: 0;
+            font-size: 30px;
+            font-weight: 300;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.1;
+            letter-spacing: 1.5px;
+            text-align: left;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+          }
+        }
+  
+        .Card-List {
+          height: 460px;
+          align-self: stretch;
+          flex-grow: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          padding: 0;
+  
+          .Card {
+            width: 375px;
+            height: 460px;
+            flex-grow: 0;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
             gap: 30px;
             padding: 0;
-
-            .Headline {
-                width: 312px;
-                height: 63px;
-                flex-grow: 0;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-                padding: 0 0 30px;
-                border-bottom: solid 1px #fff;
-
-                .Taste-the-Colours {
-                    width: 312px;
-                    height: 33px;
-                    flex-grow: 0;
-                    font-size: 30px;
-                    font-weight: 300;
-                    font-stretch: normal;
-                    font-style: normal;
-                    line-height: 1.1;
-                    letter-spacing: 1.5px;
-                    text-align: left;
-                    color: #fff;
-                    text-transform: uppercase;
-                    text-align: center;
-                }
-            
+  
+            .Tight-Top {
+              width: 375px;
+              height: 300px;
+              flex-grow: 0;
+              background-size: cover;
+              background-position: center;
             }
-
-            .Card-List {
-                height: 460px;
+  
+            .Card-Content {
+              height: 130px;
+              align-self: stretch;
+              flex-grow: 0;
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              align-items: stretch;
+              gap: 10px;
+              padding: 0 30px;
+  
+              .Card-title {
+                height: 30px;
                 align-self: stretch;
                 flex-grow: 0;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-                padding: 0;
-
-                .Card {
-                    width: 375px;
-                    height: 460px;
-                    flex-grow: 0;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: center;
-                    gap: 30px;
-                    padding: 0;
-
-                    .Tight-Top {
-                        width: 375px;
-                        height: 300px;
-                        flex-grow: 0;
-                      }
-
-                      .Card-Content {
-                        height: 130px;
-                        align-self: stretch;
-                        flex-grow: 0;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: flex-start;
-                        align-items: stretch;
-                        gap: 10px;
-                        padding: 0 30px;
-
-
-                        .Card-title {
-                            height: 30px;
-                            align-self: stretch;
-                            flex-grow: 0;
-                            font-size: 21px;
-                            font-weight: bold;
-                            font-stretch: normal;
-                            font-style: normal;
-                            line-height: 1.43;
-                            letter-spacing: normal;
-                            text-align: center;
-                            color: #fff;
-                          }
-
-                          .Card-Description {
-                            height: 90px;
-                            align-self: stretch;
-                            flex-grow: 0;
-                            font-size: 21px;
-                            font-weight: 300;
-                            font-stretch: normal;
-                            font-style: normal;
-                            line-height: 1.43;
-                            letter-spacing: normal;
-                            text-align: center;
-                            color: #fff;
-                          }
-                      }
-
-                     
-                  }
-
+                font-size: 21px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.43;
+                letter-spacing: normal;
+                text-align: center;
+                color: #fff;
               }
+  
+              .Card-Description {
+                height: 90px;
+                align-self: stretch;
+                flex-grow: 0;
+                font-size: 21px;
+                font-weight: 300;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.43;
+                letter-spacing: normal;
+                text-align: center;
+                color: #fff;
+              }
+            }
+          }
         }
+      }
     }
+  
+    /* ---- Media Queries ---- */
+    @media (max-width: 1200px) {
+      .Block3-cards {
+        height: auto;
+        padding: 100px 120px;
+      }
+  
+      .Content {
+        padding: 0 10px;
+      }
+  
+      .Card-List {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+  
+      .Card {
+        width: 300px;
+        height: 400px;
+      }
+  
+      .Tight-Top {
+        width: 26vw !important;
+        height: auto !important;
+      }
+  
+      .Card-title {
+        font-size: 18px;
+      }
 
-}
+      .Card-Content {
+        padding: 0 10px !important;
+      }
+  
+      .Card-Description {
+        font-size: 18px;
+      }
+    }
+  
+    @media (max-width: 992px) {
+      .Block3-cards {
+        padding: 80px 50px;
+      }
+  
+      .Card-List {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+  
+      .Card {
+        width: 100%;
+        height: auto;
+        max-width: 350px;
+      }
+  
+      .Tight-Top {
+        width: 30vw !important;
+        height: auto !important;
+      }
+  
+      .Card-title {
+        font-size: 16px;
+      }
+
+      .Card-Content {
+        padding: 0 5px !important;
+      }
+  
+      .Card-Description {
+        font-size: 14px !important;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .Block3-cards {
+        padding: 40px 30px;
+      }
+  
+      .Card-List {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+  
+      .Card {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+      }
+  
+      .Tight-Top {
+        width: 100%;
+        height: 200px;
+      }
+  
+      .Card-title {
+        font-size: 14px;
+      }
+  
+      .Card-Description {
+        font-size: 14px;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .Block3-cards {
+        padding: 40px 10px;
+        width: 100% !important ;
+      }
+
+      .Card-List {
+       flex-direction: column !important;
+       height: auto !important;
+      }
+  
+      .Card {
+        width: 100% !important;
+        height: auto;
+      }
+
+  
+      .Tight-Top {
+        width: 100% !important;
+        height: auto !important;
+      }
+  
+      .Card-title {
+        font-size: 12px;
+      }
+  
+      .Card-Description {
+        font-size: 14px;
+      }
+    }
+  }
+  
